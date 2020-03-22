@@ -31,4 +31,14 @@ public class Dealer {
         Card chosenCard = this.dealerCards.get(index);
         return chosenCard.getCardInformation().get(card.getSuit());
     }
+
+    public Boolean containsAce(){
+        Boolean result = false;
+        for (Card card : this.dealerCards){
+            if (card.getRank() == RankType.ACE){
+                result = true;
+            }
+        }
+        return result;
+    }
 }

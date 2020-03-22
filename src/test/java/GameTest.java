@@ -145,4 +145,15 @@ public class GameTest {
         assertEquals(false, game.checkPlayerBlackjack(emma));
     }
 
+    @Test
+    public void aceCanBecome1(){
+        emma.getHand(ace);
+        emma.getHand(card1);
+        emma.getHand(card2);
+
+        Integer expected = 16;
+
+        assertEquals(expected, game.getPlayerValues(emma));
+    }
+
 }

@@ -40,4 +40,14 @@ public class Player {
         Card chosenCard = this.hand.get(index);
         return chosenCard;
     }
+
+    public Boolean containsAce(){
+        Boolean result = false;
+        for (Card card : this.hand){
+            if (card.getRank() == RankType.ACE){
+                result = true;
+            }
+        }
+        return result;
+    }
 }

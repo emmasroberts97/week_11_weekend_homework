@@ -58,6 +58,9 @@ public class Game {
         for (Card card : player.getCards()){
              total += player.showHand(card);
         }
+        if (total > 21 && player.containsAce()){
+            total -= 10;
+        }
         return total;
     }
 
@@ -65,6 +68,9 @@ public class Game {
         Integer total = 0;
         for (Card card : dealer.getDealerCards()){
             total += dealer.showHand(card);
+        }
+        if (total > 21 && dealer.containsAce()){
+            total -= 10;
         }
         return total;
     }
